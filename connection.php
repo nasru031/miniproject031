@@ -1,12 +1,15 @@
 <?php
 $host = "localhost";
-$uername = "root";
-$password = "";
-$dbname = "miniproject031";
+$username = "id20142765_root";
+$password = "KZE^K)-#s*LCTp6A";
+$dbname = "id20142765_miniproject031";
 
-$conn = new mysqli($host,$uername,$password,$dbname);
+//สร้างการเชื่อมต่อ
+$conn = new mysqli($host, $username, $password, $dbname);
 
-if($conn->connect_errno) { 
-    die("connection failed: " .$conn->connect_errno);
+//ตรวจสอบการเชื่อมต่อ
+if ($conn->connect_error)
+{
+    die("connection failed : " . $conn->connect_error);
 }
 ?>

@@ -16,13 +16,13 @@ crossorigin="anonymous">
 <div class="container">
 <form name="frmlogin" method="post" action="login.php">
 <p> </p>
-<p><b> Login Form </b></p>
+<p><b> Login </b></p>
 <p> ชื่อผู้ใช้ :
 <input type="text" id="Username" required name="Username"
 
 placeholder="Username">
 </p>
-<p>รหสัผา่ น :
+<p>รหสัผ่าน :
 <input type="password" id="Password" required name="Password"
 
 placeholder="Password">

@@ -20,37 +20,37 @@ Header("Location:logout.php");
 <div class="container">
  <?php include("menu.php");?>
     <table id="mytable" class="table table-bordered table-striped"> 
-        <h2 >ข้อมูลสินค้า</h2>
+        <h2 >ข้อมูลการสินค้า</h2>
 <div class="mb-3">   
 
 <thead>    
 </thead>
 <tr>
-<th>รหัสสินค้า</th>
-<th>ชื่อสินค้า</th>
-<th>ราคาสินค้า</th>
-<th>จำนวนสินค้า</th>
+<th>รหัสการขาย</th>
+<th>รหัสลูกค้า</th>
+<th>รหัสพนักงาน</th>
+<th>วันที่ขาย</th>
 <th>Action</th>
 </tr>
 <div class="container">  
-    <a href="ins_form1.php" class="btn btn-success">เพิ่มข้อมูลสินค้า</a>
+    <a href="ins_form3.php" class="btn btn-success">เพิ่มข้อมูลการขายสินค้า</a>
 <div class="mb-3">   
 </thead>
 <tbody>
 <?php
 include('connection.php');
-$sql = "SELECT * FROM tbl_product";
+$sql = "SELECT * FROM tbl_sale";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
 //แสดงข้อมูลเป็นตาราง
 while($row = $result->fetch_assoc()) {
 echo '<tr>';
-echo '<td>'. $row['P_Id'] . '</td>';
-echo '<td>'. $row['P_Name'] . '</td>';
-echo '<td>'. $row['P_Price'] . '</td>';
-echo '<td>'. $row['P_Number'] . '</td>';
-echo '<td><a role="button"  href="update1.php?P_Id='.$row['P_Id'].'" class="btn btn-primary">Update</a> ';  //ปุ่มที่เพิ่มเข้ามา
-echo '<a href="delete1.php?P_Id='.$row['P_Id'].'" class="btn btn-danger">delete</a>';  //ปุ่มที่เพิ่มเข้ามา
+echo '<td>'. $row['S_Sale'] . '</td>';
+echo '<td>'. $row['S_Idcustomer'] . '</td>';
+echo '<td>'. $row['S_Idemployee'] . '</td>';
+echo '<td>'. $row['S_Dateout'] . '</td>';
+echo '<td><a role="button"  href="update3.php?S_Sale='.$row['S_Sale'].'" class="btn btn-primary">Update</a> ';  //ปุ่มที่เพิ่มเข้ามา
+echo '<a href="delete3.php?S_Sale='.$row['S_Sale'].'" class="btn btn-danger">delete</a>';  //ปุ่มที่เพิ่มเข้ามา
 echo '</tr>';
 }
 } else {
